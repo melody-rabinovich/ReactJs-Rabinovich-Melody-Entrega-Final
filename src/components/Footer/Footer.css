@@ -1,0 +1,26 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+
+  border-top: 1px solid #2a2a2a;
+
+  background-color: #181818;
+  color: #b3b3b3;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+footer nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+footer a {
+  transition: color 0.2s ease;
+}

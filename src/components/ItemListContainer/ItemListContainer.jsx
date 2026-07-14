@@ -1,0 +1,29 @@
+import { useEffect, useState } from "react"
+import {ItemList} from "../ItemList/ItemList.jsx"
+import { getProducts } from "../../services/productsService.js";
+
+export const ItemListContainer = () => {
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(()=>{
+        setLoading(true);
+
+        getProducts()
+            .then((data) => setProducts(data))
+            .catch((err) => console.log("Hubo un error: ", err))
+            .finally(() => setLoading(false))
+    }, [])
+
+
+    if(loading){
+        return <p> Cargando ...</p>
+    }
+
+    return (
+        <section>
+            <ItemList products = {products} /> 
+        </section>
+    )
+
+}
