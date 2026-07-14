@@ -9,8 +9,7 @@ export const validateProduct = (product) => {
         errors.price = "Precio inválido"
     }
 
-    if (!product.descritpion.trim()) {
-
+    if (!product.description.trim()) {
         errors.description = "La descripción es obligatoria"
     }
 
